@@ -1,12 +1,15 @@
 package com.lime.mediscreen.service;
 
 import com.lime.mediscreen.model.Patient;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface PatientService {
+    List<Patient> findAllPatients();
     Patient findByFirstName(String firstName);
     List<Patient> findByLastName(String lastName);
+    Patient createPatient(Patient patient);
+    Patient updatePatient(String firstName, Patient patientDetails);
+    Boolean deletePatientByFirstName(String firstName);
+
 }

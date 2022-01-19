@@ -10,4 +10,5 @@ import java.util.List;
 public interface PatientRepository extends MongoRepository<Patient, Long> {
     Patient findByFirstName(String firstName);
     List<Patient> findByLastName(String lastName);
+    void deletePatientByFirstName(String firstName);
 }
