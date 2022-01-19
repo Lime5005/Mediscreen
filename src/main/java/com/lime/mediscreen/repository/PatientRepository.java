@@ -2,10 +2,12 @@ package com.lime.mediscreen.repository;
 
 import com.lime.mediscreen.model.Patient;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface PatientRepository extends MongoRepository<Patient, String> {
+@Repository
+public interface PatientRepository extends MongoRepository<Patient, Long> {
     Patient findByFirstName(String firstName);
     List<Patient> findByLastName(String lastName);
 }
